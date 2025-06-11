@@ -29,3 +29,15 @@ def predict():
         float(request.form['LSTAT'])
 
     ]
+
+    features_array = np.array([features])
+
+    prediction = model.predict(features_array)
+
+    output = round(prediction[0],2)
+
+    return render_template('index.html',prediction_text=f"Predicted Price:{output}")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
