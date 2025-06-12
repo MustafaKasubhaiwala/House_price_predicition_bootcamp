@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boaston Housing Price Prediction</title>
+    <link rel="stylesheet" href="static\style.css">
+
 </head>
 <body>
+    <div id="form">
     <h2>Boaston Housing Price Prediction</h2>
+    
     <form action="/predict" method="post">
         <label>CRIM:</label><br>
         <input type="text" name="CRIM"><br>
@@ -49,13 +53,16 @@
 
 
         <br>
-        <input type="submit" value="predict">
+        <input type="submit" value="predict" class="btn">
     </form>
+    </div>
     
+    <div id="result">
     {% if prediction_text %}
     <h3>
         {{prediction_text}}
     </h3>
     {% endif %}
+    </div>
 </body>
 </html>
