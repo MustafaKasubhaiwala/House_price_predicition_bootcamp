@@ -1,4 +1,4 @@
-from flask import flask,render_template,request
+from flask import Flask,render_template,request
 import pickle
 import numpy as np 
 
@@ -11,7 +11,7 @@ with open('house_price_prediction.pkl','rb') as f:
 def home():
     return render_template('index.html')
 
-@app.route('/predict',method=['POST'])
+@app.route('/predict',methods=['POST'])
 def predict():
     features = [
         float(request.form['CRIM']),
