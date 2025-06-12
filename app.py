@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 with open('house_price_prediction.pkl','rb') as f:
-    model.pickle.load(f)
+    model=pickle.load(f)
 
 @app.route('/')
 def home():
